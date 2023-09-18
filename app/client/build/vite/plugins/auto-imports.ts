@@ -19,7 +19,7 @@ export const configAutoImportPlugins = () => [
       // 自动导入图标组件
       IconsResolver({
         // 图标使用：<{prefix}-{collection}-{icon} />
-        prefix: 'i',
+        prefix: 'i'
       })
     ],
 
@@ -41,7 +41,7 @@ export const configAutoImportPlugins = () => [
         alias: {
           emoji: 'fluent-emoji-flat'
         }
-      }),
+      })
     ]
   }),
 

@@ -6,10 +6,16 @@
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    "vue",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "vue",
+    "svelte",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yml",
+    "yaml"
   ],
-  "scss.lint.unknownAtRules": "ignore",
-  "volar.inlayHints.eventArgumentInInlineHandlers": false
+  "scss.lint.unknownAtRules": "ignore"
 }

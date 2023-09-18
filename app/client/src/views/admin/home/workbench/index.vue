@@ -37,14 +37,14 @@
     id: i,
     title: 'Evan You 今天早上 8：50 紧急修复了 Vue Power Admin 的一个功能缺陷',
     description: '这个缺陷导致用户反馈上对其严重不满，Evan You 相当自责...',
-    avatar: `https://picsum.photos/seed/picsum/60/60?random=${i+1}`
+    avatar: `https://picsum.photos/seed/picsum/60/60?random=${i + 1}`
   }))
 
   const infoList = Array(5).fill(0).map((_, i) => ({
     id: i,
     title: 'Evan You 今天早上 8：50 紧急修复了 Vue Power Admin 的一个功能缺陷',
     description: '这个缺陷导致用户反馈上对其严重不满，Evan You 相当自责...',
-    avatar: `https://picsum.photos/seed/picsum/60/60?random=${i+6}`
+    avatar: `https://picsum.photos/seed/picsum/60/60?random=${i + 6}`
   }))
 
   function drinkCoffee() {
@@ -94,7 +94,9 @@
       <el-col :span="12">
         <Card title="任务待办">
           <template #right>
-            <el-button type="primary" link>更多<i-ep-right /></el-button>
+            <el-button type="primary" link>
+              更多<i-ep-right />
+            </el-button>
           </template>
           <List :data="taskList" mt="2" />
         </Card>

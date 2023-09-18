@@ -1,11 +1,11 @@
 <script setup lang="ts" name="ThemeSetting">
-  import ThemeSwitch from '@/components/ThemeSwitch'
+  import { storeToRefs } from 'pinia'
   import ThemeColorPicker from './ThemeColorPicker.vue'
+  import ThemeSwitch from '@/components/ThemeSwitch'
   import { MenuLayout } from '@/enums/menuEnum'
   import { useSettingStore } from '@/store/modules/setting'
   import { getCssVar, setCssVar } from '@/hooks/web/useCssVar'
   import { CSSVarEnum } from '@/enums/appEnum'
-  import { storeToRefs } from 'pinia'
 
   const settingStore = useSettingStore()
   const {
@@ -30,7 +30,6 @@
     settingStore.toggleFpLoading()
     return true
   }
-
 </script>
 
 <template>
@@ -62,7 +61,9 @@
     <div flex="~ col" items="between">
       <el-divider>主题</el-divider>
       <ThemeSwitch type="switch" />
-      <el-divider mt-12>导航栏</el-divider>
+      <el-divider mt-12>
+        导航栏
+      </el-divider>
       <div center gap="6" text="5xl regular">
         <el-tooltip
           effect="dark"
@@ -83,9 +84,13 @@
           </span>
         </el-tooltip>
       </div>
-      <el-divider mt-12>主题色</el-divider>
+      <el-divider mt-12>
+        主题色
+      </el-divider>
       <ThemeColorPicker />
-      <el-divider mt-12>界面</el-divider>
+      <el-divider mt-12>
+        界面
+      </el-divider>
       <div w-full flex="~ col" gap="2">
         <div class="between">
           <span>面包屑</span>
@@ -105,14 +110,18 @@
           <el-switch v-model="hasFooter" inline-prompt active-text="开" inactive-text="关" />
         </div>
       </div>
-      <el-divider mt-12>功能</el-divider>
+      <el-divider mt-12>
+        功能
+      </el-divider>
       <div w-full flex="~ col" gap="2">
         <div class="between">
           <span>国际化</span>
           <el-switch v-model="hasLocales" inline-prompt active-text="开" inactive-text="关" />
         </div>
       </div>
-      <el-divider mt-12>动效</el-divider>
+      <el-divider mt-12>
+        动效
+      </el-divider>
       <div w-full flex="~ col" gap="2">
         <div class="between">
           <span>首屏动画</span>

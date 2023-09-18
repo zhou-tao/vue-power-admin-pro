@@ -4,15 +4,15 @@ import { Spinner } from './spinner'
 
 const GITHUB_BASE_URL = 'https://github.com/'
 
-export function downloadRepo (repo: string, dir: string) {
+export function downloadRepo(repo: string, dir: string) {
   const [url, branch = 'main'] = repo.split('#')
   return new Promise((resolve, reject) => {
     Spinner.start()
     const clone = spawn('git', ['clone', '--depth=1', `${GITHUB_BASE_URL}${url}`, '-b', branch, dir])
-    clone.on('exit', code => {
+    clone.on('exit', (code) => {
       spawn('rm', ['-rf', `${dir}/.git`])
-      Spinner.stop(code)
-      code === 0 ? resolve(null) : reject()
+      Spinner.stop(code!)
+      code === 0 ? resolve(null) : reject(new Error('Clone Failed!'))
     })
   })
 }

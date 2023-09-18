@@ -1,8 +1,8 @@
 <script setup lang="ts" name="Personal">
+  import cloneDeep from 'lodash-es/cloneDeep'
   import { useMessage } from '@/hooks/web/useMessage'
   import { useUserStore } from '@/store/modules/user'
   import Previewer from '@/utils/previewer'
-  import cloneDeep from 'lodash-es/cloneDeep'
 
   const $router = useRouter()
   const { $message } = useMessage()
@@ -24,19 +24,26 @@
       { required: true, message: '请输入新密码', trigger: 'blur' }
     ],
     confirmPassword: [
-      { required: true, trigger: 'blur', validator: (rule: any, value: any, callback: any) => {
-        if (value === '') {
-          callback(new Error('请再次输入新密码'))
-        } else if (value !== formData.newPassword) {
-          callback(new Error('两次输入的密码不一致!'))
-        } else {
-          callback()
+      {
+        required: true,
+        trigger: 'blur',
+        validator: (rule: any, value: any, callback: any) => {
+          if (value === '') {
+            callback(new Error('请再次输入新密码'))
+          }
+          else if (value !== formData.newPassword) {
+            callback(new Error('两次输入的密码不一致!'))
+          }
+          else {
+            callback()
+          }
         }
-      } }
-    ],
+      }
+    ]
   }
 
   onMounted(() => {
+    // eslint-disable-next-line no-new
     new Previewer(avatar.value)
     const route = useRoute()
     const { tab } = route.query
@@ -77,7 +84,7 @@
     ],
     roles: [
       { required: true, message: '请选择权限', trigger: 'change' }
-    ],
+    ]
   }
 
   async function handleSubmit() {
@@ -94,7 +101,6 @@
     rowData.posts = user.posts.map(p => p.id)
     submitForm = rowData
   }
-
 </script>
 
 <template>
@@ -115,7 +121,9 @@
                 资料修改
               </el-button>
             </template>
-            <el-descriptions-item label="用户名">{{ userStore.username }}</el-descriptions-item>
+            <el-descriptions-item label="用户名">
+              {{ userStore.username }}
+            </el-descriptions-item>
             <el-descriptions-item label="头像">
               <img
                 ref="avatar"
@@ -124,19 +132,33 @@
                 width="80"
                 rounded
                 cursor="pointer"
-              />
+              >
             </el-descriptions-item>
-            <el-descriptions-item label="姓名">{{ userStore.name }}</el-descriptions-item>
-            <el-descriptions-item label="性别">{{ userStore.gender === '1' ? '男' : '女' }}</el-descriptions-item>
-            <el-descriptions-item label="电话">{{ userStore.mobile }}</el-descriptions-item>
+            <el-descriptions-item label="姓名">
+              {{ userStore.name }}
+            </el-descriptions-item>
+            <el-descriptions-item label="性别">
+              {{ userStore.gender === '1' ? '男' : '女' }}
+            </el-descriptions-item>
+            <el-descriptions-item label="电话">
+              {{ userStore.mobile }}
+            </el-descriptions-item>
             <el-descriptions-item label="角色">
-              <el-tag v-for="role in userStore.roles" :key="role.id" type="success">{{ role.name }}</el-tag>
+              <el-tag v-for="role in userStore.roles" :key="role.id" type="success">
+                {{ role.name }}
+              </el-tag>
             </el-descriptions-item>
-            <el-descriptions-item label="部门">{{ userStore.deptName }}</el-descriptions-item>
+            <el-descriptions-item label="部门">
+              {{ userStore.deptName }}
+            </el-descriptions-item>
             <el-descriptions-item label="岗位">
-              <el-tag v-for="post in userStore.posts" :key="post.id" type="warning" class="mx-1">{{ post.name }}</el-tag>
+              <el-tag v-for="post in userStore.posts" :key="post.id" type="warning" class="mx-1">
+                {{ post.name }}
+              </el-tag>
             </el-descriptions-item>
-            <el-descriptions-item label="个人说明">树叶的一生，只是为了归根么？</el-descriptions-item>
+            <el-descriptions-item label="个人说明">
+              树叶的一生，只是为了归根么？
+            </el-descriptions-item>
           </el-descriptions>
         </div>
       </el-tab-pane>
@@ -169,7 +191,9 @@
               <el-input v-model="formData.confirmPassword" type="password" />
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="submit">保存</el-button>
+              <el-button type="primary" @click="submit">
+                保存
+              </el-button>
               <el-button>取消</el-button>
             </el-form-item>
           </el-form>

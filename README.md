@@ -4,7 +4,7 @@
     <a href="https://github.com/nodejs/release#release-schedule"><img src="https://img.shields.io/badge/node-%5E14.18.0%20%7C%7C%20%3E%3D16.0.0-brightgreen?style=flat-square&logo=node.js" alt="Node"></a>
     <a href="https://github.com/zhou-tao/vue-power-admin/releases"><img src="https://img.shields.io/badge/release-v2-important?style=flat-square&logo=github" alt="release"></a>
   </p>
-  <h1>Vue Power Admin</h1>
+  <h1>Vue Power Admin Pro</h1>
 </div>
 
 **English** | [简体中文](./README.zh-CN.md)

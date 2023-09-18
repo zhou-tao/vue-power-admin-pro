@@ -1,8 +1,27 @@
 {
   "name": "create-vpa",
+  "type": "module",
   "version": "0.2.0",
   "description": "vue-power-admin cli",
-  "type": "module",
+  "author": "toryz",
+  "license": "MIT",
+  "homepage": "https://github.com/zhou-tao/vue-power-admin/tree/2.x/packages/create-vpa",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhou-tao/vue-power-admin.git",
+    "directory": "packages/create-vpa"
+  },
+  "bugs": {
+    "url": "https://github.com/zhou-tao/vue-power-admin/issues"
+  },
+  "keywords": [
+    "vue3",
+    "vue3 admin",
+    "vue power admin",
+    "typescript",
+    "vite",
+    "create-vpa"
+  ],
   "main": "dist/index.js",
   "bin": {
     "create-vpa": "index.js",
@@ -18,29 +37,10 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhou-tao/vue-power-admin.git",
-    "directory": "packages/create-vpa"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "bugs": {
-    "url": "https://github.com/zhou-tao/vue-power-admin/issues"
-  },
-  "homepage": "https://github.com/zhou-tao/vue-power-admin/tree/2.x/packages/create-vpa",
-  "keywords": [
-    "vue3",
-    "vue3 admin",
-    "vue power admin",
-    "typescript",
-    "vite",
-    "create-vpa"
-  ],
-  "author": "toryz",
-  "license": "MIT",
   "devDependencies": {
     "@types/minimist": "^1.2.2",
     "@types/prompts": "^2.4.4",

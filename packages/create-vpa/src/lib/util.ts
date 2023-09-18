@@ -8,11 +8,11 @@ export function getPkgManager() {
   const pkgSpecArr = pkgSpec.split('/')
   return {
     name: pkgSpecArr[0],
-    version: pkgSpecArr[1],
+    version: pkgSpecArr[1]
   }
 }
 
-export function formatTargetDir (dir: string) {
+export function formatTargetDir(dir: string) {
   return dir?.trim().replace(/\/+$/g, '')
 }
 
@@ -31,7 +31,7 @@ export function isEmpty(path: string) {
 
 export function isValidPackageName(projectName: string) {
   return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(
-    projectName,
+    projectName
   )
 }
 

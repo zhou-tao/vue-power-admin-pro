@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "Vue Power Admin",
-  description: "vue-power-admin docs.",
+  title: 'Vue Power Admin',
+  description: 'vue-power-admin docs.',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },

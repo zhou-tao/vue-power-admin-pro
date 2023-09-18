@@ -1,12 +1,12 @@
 <script setup lang="ts" name="LoginForm">
   import { reactive } from 'vue'
-  import config from '@/config'
-  import { LoginParams } from '@/api/_auth/model'
   import { useMessage } from '@h/web/useMessage'
   import { useLoginByPassword } from '@h/logic/useLogin'
-  import { FormInstance, FormRules } from 'element-plus'
+  import type { FormInstance, FormRules } from 'element-plus'
   import { useRouter } from 'vue-router'
   import { useI18n } from 'vue-i18n'
+  import type { LoginParams } from '@/api/_auth/model'
+  import config from '@/config'
 
   const { t } = useI18n()
   const router = useRouter()
@@ -26,14 +26,15 @@
 
   async function doLogin(formEl: FormInstance | undefined) {
     if (!formEl) return
-    await formEl.validate(async valid => {
+    await formEl.validate(async (valid) => {
       if (!valid) return false
       loading.value = true
       const [success] = await useLoginByPassword(loginForm)
       loading.value = false
       if (success) {
         showVerifyDialog.value = true
-      } else {
+      }
+      else {
         $message.error('账户名不存在或密码错误！')
       }
     })
@@ -48,7 +49,7 @@
     $notify({
       title: 'Welcome',
       message: t('home.welcome'),
-      type: 'success',
+      type: 'success'
     })
   }
 </script>
@@ -70,9 +71,9 @@
       <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules">
         <el-form-item prop="username">
           <el-input
-            size="large"
             v-model="loginForm.username"
-            :placeholder="$t('home.account') + ' admin'"
+            size="large"
+            :placeholder="`${$t('home.account')} admin`"
           />
         </el-form-item>
         <el-form-item prop="password" :style="{ marginTop: '38px' }">
@@ -80,14 +81,16 @@
             v-model="loginForm.password"
             type="password"
             size="large"
-            :placeholder="$t('home.password') + ' 123456'"
+            :placeholder="`${$t('home.password')} 123456`"
             show-password
             @keyup.enter="doLogin(loginFormRef)"
           />
         </el-form-item>
         <el-form-item>
           <div w="360px" flex justify="between" items="center">
-            <el-checkbox v-model="loginForm.rememberMe">{{ $t('home.remember') }}</el-checkbox>
+            <el-checkbox v-model="loginForm.rememberMe">
+              {{ $t('home.remember') }}
+            </el-checkbox>
             <span
               text="sm primary"
               cursor="pointer"
@@ -125,7 +128,6 @@
 </template>
 
 <style lang="scss" scoped>
-
 :deep(.el-form) {
   .el-input__wrapper, .el-checkbox__inner {
     @apply bg-transparent;

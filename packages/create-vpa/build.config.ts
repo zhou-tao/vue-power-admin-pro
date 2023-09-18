@@ -7,10 +7,10 @@ export default defineBuildConfig({
   rollup: {
     inlineDependencies: true,
     esbuild: {
-      minify: true,
-    },
+      minify: true
+    }
   },
   alias: {
-    prompts: 'prompts/lib/index.js',
+    prompts: 'prompts/lib/index.js'
   }
 })

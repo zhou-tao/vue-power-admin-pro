@@ -1,6 +1,25 @@
 {
-  "references": [
-    { "path": "./tsconfig.client.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2016",
+    "module": "ES2020",
+    "esModuleInterop": true,
+    "sourceMap": false,
+
+    /* Lint */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* module */
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist", "**/*.js", "app/**/*"]
 }

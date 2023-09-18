@@ -42,13 +42,13 @@
     <Toolbar
       style="border-bottom: 1px solid #ccc"
       :editor="editorRef"
-      :defaultConfig="toolbarConfig"
+      :default-config="toolbarConfig"
       mode="default"
     />
     <Editor
-      style="height: 500px; overflow-y: hidden;"
       v-model="valueHtml"
-      :defaultConfig="editorConfig"
+      style="height: 500px; overflow-y: hidden;"
+      :default-config="editorConfig"
       mode="default"
       @on-created="handleCreated"
       @on-change="handleChange"

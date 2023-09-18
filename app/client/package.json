@@ -1,5 +1,5 @@
 {
-  "name": "@vue-power-admin/client",
+  "name": "@vue-power-admin-pro/client",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -36,12 +36,9 @@
     "@types/lodash-es": "^4.17.6",
     "@types/nprogress": "^0.2.0",
     "@types/qs": "^6.9.7",
-    "@unocss/preset-attributify": "^0.45.29",
-    "@unocss/preset-uno": "^0.45.29",
-    "@unocss/transformer-directives": "^0.45.29",
-    "@vitejs/plugin-legacy": "^2.2.0",
-    "@vitejs/plugin-vue": "^3.1.2",
-    "@vue/compiler-sfc": "^3.2.45",
+    "@vitejs/plugin-legacy": "^4.0.4",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/compiler-sfc": "^3.3.4",
     "autoprefixer": "^10.4.13",
     "mockjs": "^1.1.0",
     "sass": "^1.55.0",

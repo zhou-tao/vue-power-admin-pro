@@ -1,12 +1,12 @@
 <script setup lang="ts" name="LayoutFooter">
-  import { useSettingStore } from '@/store/modules/setting'
   import { storeToRefs } from 'pinia'
+  import { useSettingStore } from '@/store/modules/setting'
 
   const { hasFooter } = storeToRefs(useSettingStore())
 </script>
 
 <template>
-  <el-footer h="footer" v-show="hasFooter">
+  <el-footer v-show="hasFooter" h="footer">
     <div h="full" flex items="center" justify="center" text="placeholder">
       MIT Licensed <i-app-heart text="rose-600!" /> Copyright © 2022-present vue-power-admin
     </div>

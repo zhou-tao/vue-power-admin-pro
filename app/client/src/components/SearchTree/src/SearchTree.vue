@@ -1,5 +1,4 @@
 <script setup lang="ts" name="SearchTree">
-
   defineProps<{
     enableFilter?: boolean
     data: Record<string, any>[]

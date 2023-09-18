@@ -5,7 +5,6 @@
   const settingStore = useSettingStore()
 
   const router = useRouter()
-
 </script>
 
 <template>

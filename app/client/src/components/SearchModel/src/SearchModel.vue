@@ -1,13 +1,13 @@
 <script setup lang="ts" name="SearchModel">
-  import { SearchItemConfig } from './useSearchModel'
-  import { ComponentName, getElComponent, isRadio } from './useComponent'
   import type { FormInstance } from 'element-plus'
+  import type { SearchItemConfig } from './useSearchModel'
+  import { ComponentName, getElComponent, isRadio } from './useComponent'
 
   const props = withDefaults(defineProps<{
-    collapse?: boolean,
-    showLines?: number,
-    perLineCount?: number,
-    modelValue: any,
+    collapse?: boolean
+    showLines?: number
+    perLineCount?: number
+    modelValue: any
     config: SearchItemConfig[]
   }>(), {
     collapse: true, // 开启收缩功能
@@ -24,7 +24,7 @@
   const showCollapseBtn = computed(() => props.collapse && props.config.length > 3)
 
   const formData = computed({
-    set: v => {
+    set: (v) => {
       emit('update:modelValue', v)
     },
     get: () => props.modelValue
@@ -32,7 +32,7 @@
 
   const showConfigCount = computed(() => {
     if (!props.collapse || !collapsed.value) return props.config.length
-    return props.showLines*props.perLineCount - 1
+    return props.showLines * props.perLineCount - 1
   })
 
   function handleChange(field: string, value: string | number) {
@@ -43,14 +43,13 @@
     searchFormRef.value!.resetFields()
     emit('reset')
   }
-
 </script>
 
 <template>
   <el-form ref="searchFormRef" inline :model="formData" label-position="top">
     <el-row :gutter="24" flex-1>
       <template v-for="({ component, field, label, options, ...attrs }, index) in config" :key="field">
-        <el-col :span="colSpan" v-show="showConfigCount > index">
+        <el-col v-show="showConfigCount > index" :span="colSpan">
           <el-form-item :label="label" :prop="field">
             <component :is="getElComponent(component)" :model-value="formData[field]" v-bind="attrs" @input="handleChange(field, $event)" @change="handleChange(field, $event)">
               <template v-if="component.name === ComponentName.ElSelect">

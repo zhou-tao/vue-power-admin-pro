@@ -1,10 +1,13 @@
 import type { App } from 'vue'
-import { createI18n, I18nOptions } from 'vue-i18n'
+import type { I18nOptions } from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 
 export interface LocaleType {
   name: string
   value: string
 }
+
+type LocaleModules = Record<string, any>
 
 export const i18n = createI18n({
   legacy: false,
@@ -18,25 +21,22 @@ export function setupI18n(app: App) {
 }
 
 function getLocaleData(): I18nOptions['messages'] {
-  const modules = import.meta.glob('./lang/*.ts', { eager: true })
+  const modules: LocaleModules = import.meta.glob('./lang/*.ts', { eager: true })
   const lang: Record<string, any> = {}
   for (const path in modules) {
     const name: string = path.match(/lang\/(\S*).ts/)![1]
-    // @ts-ignore
     lang[name] = modules[path].default
   }
   return lang
 }
 
 export function getLocaleTypes(): LocaleType[] {
-  const modules = import.meta.glob('./lang/*.ts', { eager: true })
+  const modules: LocaleModules = import.meta.glob('./lang/*.ts', { eager: true })
   const localeTypes: LocaleType[] = []
   for (const path in modules) {
     const value: string = path.match(/lang\/(\S*).ts/)![1]
-    // @ts-ignore
     localeTypes.push({
       value,
-      // @ts-ignore
       name: modules[path].default.name
     })
   }

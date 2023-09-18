@@ -1,34 +1,11 @@
 {
+  "name": "@vue-power-admin-pro/monorepo",
+  "type": "module",
   "private": true,
+  "packageManager": "pnpm@8.6.10",
   "author": "toryz",
-  "scripts": {
-    "commit": "git cz",
-    "dev": "pnpm -C app/client dev",
-    "dev:server": "pnpm -C app/server start:dev",
-    "dev:docs": "pnpm -C docs dev",
-    "dev:cli": "pnpm -C packages/create-vpa dev",
-    "build:cli": "pnpm -C packages/create-vpa build",
-    "build:docs": "pnpm -C docs build",
-    "lint:eslint": "eslint \"app/client/src/**/*.{ts,tsx,vue}\" --fix",
-    "lint:staged": "lint-staged",
-    "prepare": "husky install && chmod ug+x .husky/*"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.26.2",
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@types/node": "^18.15.5",
-    "@typescript-eslint/eslint-plugin": "^5.56.0",
-    "@typescript-eslint/parser": "^5.56.0",
-    "commitizen": "^4.3.0",
-    "cz-git": "^1.4.1",
-    "eslint": "^8.36.0",
-    "eslint-plugin-vue": "^9.6.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "plop": "^3.1.2",
-    "typescript": "^5.0.2"
-  },
+  "license": "MIT",
+  "homepage": "https://github.com/zhou-tao/vue-power-admin",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhou-tao/vue-power-admin.git"
@@ -36,19 +13,48 @@
   "bugs": {
     "url": "https://github.com/zhou-tao/vue-power-admin/issues"
   },
-  "homepage": "https://github.com/zhou-tao/vue-power-admin",
   "engines": {
     "node": ">=14"
   },
+  "scripts": {
+    "commit": "git cz",
+    "dev": "pnpm -C app/client dev",
+    "dev:server": "pnpm -C app/server start:dev",
+    "dev:docs": "pnpm -C docs dev",
+    "dev:cli": "pnpm -C packages/create-vpa dev",
+    "build": "pnpm -C app/client build",
+    "build:cli": "pnpm -C packages/create-vpa build",
+    "build:docs": "pnpm -C docs build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@toryz/eslint-config": "^0.1.4",
+    "@types/node": "^18.15.5",
+    "chalk": "^5.3.0",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.4.1",
+    "eslint": "^8.46.0",
+    "lint-staged": "^13.0.3",
+    "plop": "^3.1.2",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.0.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "node scripts/verifyCommit.js"
+  },
   "lint-staged": {
-    "*.{ts,tsx,vue}": [
-      "eslint --fix"
-    ]
+    "*": "eslint --fix"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-git"
     }
-  },
-  "license": "MIT"
+  }
 }

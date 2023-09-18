@@ -1,13 +1,13 @@
 <script setup lang="ts" name="LayoutTabs">
   import type { TabsPaneContext } from 'element-plus'
-  import { useAppStore } from '@/store/modules/app'
   import { refresh } from '../content/useContent'
+  import { useAppStore } from '@/store/modules/app'
 
   const appStore = useAppStore()
   const router = useRouter()
   const route = useRoute()
 
-  watch(route, v => {
+  watch(route, (v) => {
     const { path, meta } = v
     appStore.addVisitedView({
       path,
@@ -17,7 +17,7 @@
 
   const isSingleVisitedView = computed(() => appStore.visitedViews.length === 1)
 
-  function handleClickTab (tab: TabsPaneContext) {
+  function handleClickTab(tab: TabsPaneContext) {
     router.push(tab.paneName as string)
   }
 
@@ -32,7 +32,6 @@
   function handleRemoveOtherTab() {
     appStore.visitedViews = appStore.visitedViews.filter(view => view.path === route.path)
   }
-
 </script>
 
 <template>
@@ -69,11 +68,11 @@
             <i-ep-refresh />
             {{ $t('tab.refresh') }}
           </el-dropdown-item>
-          <el-dropdown-item @click="handleRemoveTab(route.path)" :disabled="isSingleVisitedView">
+          <el-dropdown-item :disabled="isSingleVisitedView" @click="handleRemoveTab(route.path)">
             <i-ep-close />
             {{ $t('tab.close') }}
           </el-dropdown-item>
-          <el-dropdown-item @click="handleRemoveOtherTab" :disabled="isSingleVisitedView">
+          <el-dropdown-item :disabled="isSingleVisitedView" @click="handleRemoveOtherTab">
             <i-ep-delete />
             {{ $t('tab.closeOther') }}
           </el-dropdown-item>

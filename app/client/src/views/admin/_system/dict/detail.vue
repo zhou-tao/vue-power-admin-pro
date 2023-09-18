@@ -55,7 +55,9 @@
             权限
           </div>
         </template>
-        <el-tag size="small">用户</el-tag>
+        <el-tag size="small">
+          用户
+        </el-tag>
       </el-descriptions-item>
       <el-descriptions-item>
         <template #label>
@@ -74,7 +76,9 @@
         前端
       </el-descriptions-item>
     </el-descriptions>
-    <div text="lg" font="medium" mt-6 mb-2>职业生涯</div>
+    <div text="lg" font="medium" mt-6 mb-2>
+      职业生涯
+    </div>
     <el-timeline>
       <el-timeline-item timestamp="2018/4/12" placement="top">
         <el-card>

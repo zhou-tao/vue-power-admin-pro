@@ -9,7 +9,6 @@
   const settingStore = useSettingStore()
 
   const darkTheme = computed(() => settingStore.isDark.value)
-
 </script>
 
 <template>
@@ -25,7 +24,7 @@
     />
     <i-emoji-crescent-moon />
   </div>
-  <span v-else @click="settingStore.toggleDark()" class="icon-view" text="xl! regular" cursor="pointer">
+  <span v-else class="icon-view" text="xl! regular" cursor="pointer" @click="settingStore.toggleDark()">
     <i-app-sun v-if="darkTheme" />
     <i-app-moon v-else />
   </span>

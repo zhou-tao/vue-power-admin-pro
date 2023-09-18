@@ -1,4 +1,6 @@
 <script setup lang="ts" name="LayoutHeader">
+  import { useI18n } from 'vue-i18n'
+  import { storeToRefs } from 'pinia'
   import Breadcrumb from './components/Breadcrumb.vue'
   import ThemeSwitch from '@/components/ThemeSwitch'
   import LogoView from '@/layouts/admin/sider/components/LogoView.vue'
@@ -8,9 +10,7 @@
   import { isSupported, isFullScreen, toggleFullScreen, autoRemoveListener } from '@/hooks/web/useFullScreen'
   import { MenuLayout } from '@/enums/menuEnum'
   import { getLocaleTypes } from '@/locales'
-  import { useI18n } from 'vue-i18n'
   import { useMessage } from '@/hooks/web/useMessage'
-  import { storeToRefs } from 'pinia'
 
   const { $message } = useMessage()
   const { username, avatar } = storeToRefs(useUserStore())
@@ -32,7 +32,6 @@
     locale.value = language
     $message.success(`${t('header.changeLocale')}: ${name}`)
   }
-
 </script>
 
 <template>
@@ -50,12 +49,12 @@
         <i-ep-expand v-show="menuCollapsed" />
         <i-ep-fold v-show="!menuCollapsed" />
       </span>
-      <LogoView mr="6" v-else />
+      <LogoView v-else mr="6" />
       <Breadcrumb v-if="hasBreadcrumb && isVerticalMenu" />
     </div>
     <Menu v-if="!isVerticalMenu" :mode="MenuLayout.HORIZONTAL" />
     <div flex items="center" gap="5">
-      <div class="icon-view" text="13px!" v-if="isSupported" @click="toggleFullScreen">
+      <div v-if="isSupported" class="icon-view" text="13px!" @click="toggleFullScreen">
         <i-ri-fullscreen-fill v-show="!isFullScreen" />
         <i-ri-fullscreen-exit-fill v-show="isFullScreen" />
       </div>
@@ -80,7 +79,9 @@
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item v-for="({ value, name }, i) in localeTypes" :key="value" :divided="!!i" @click="handleLocaleChange(value, name)">
-              <div inline-block w-18>{{ name }}</div>
+              <div inline-block w-18>
+                {{ name }}
+              </div>
               <i-ri-check-fill v-if="value === locale" />
             </el-dropdown-item>
           </el-dropdown-menu>

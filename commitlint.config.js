@@ -11,20 +11,20 @@ module.exports = {
       2,
       'always',
       [
-        'feat', //新增功能
-        'fix', //修复BUG
-        'perf', //性能优化
-        'style', //代码格式
-        'docs', //文档变更
-        'test', //添加测试或测试改动
-        'refactor', //代码重构
-        'build', //构建相关、外部依赖变更(如升级 npm 包、修改打包配置等)
-        'ci', //修改 CI 配置、脚本
-        'chore', //架构变动
-        'revert', //代码回退
-        'wip', //正在开发中
-        'workflow', //工作流修改
-        'types' //类型定义文件修改
+        'feat', // 新增功能
+        'fix', // 修复BUG
+        'perf', // 性能优化
+        'style', // 代码格式
+        'docs', // 文档变更
+        'test', // 添加测试或测试改动
+        'refactor', // 代码重构
+        'build', // 构建相关、外部依赖变更(如升级 npm 包、修改打包配置等)
+        'ci', // 修改 CI 配置、脚本
+        'chore', // 架构变动
+        'revert', // 代码回退
+        'wip', // 正在开发中
+        'workflow', // 工作流修改
+        'types' // 类型定义文件修改
       ]
     ]
   },

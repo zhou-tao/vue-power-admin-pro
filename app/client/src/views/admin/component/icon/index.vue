@@ -1,5 +1,6 @@
 <script setup lang="ts" name="Icon">
   import { Icon } from '@iconify/vue'
+
   const icons = ['ic:baseline-heart-broken', 'ant-design:like-twotone', 'mdi:alarm-clock']
   const getIconCode = (name: string, dynamic = false) => {
     return dynamic ? `<Icon icon="${name}">` : `<${name} />`
@@ -25,7 +26,7 @@
     </div>
     <PageTitle title="动态图标" description="通过 @iconify/vue 引入Icon组件，可动态设置icon属性来自动请求任何iconify图标集合来获取图标。注意：这种方式依赖于HTTP请求！" />
     <div mt="6" mb="10" flex gap="4">
-      <div class="box" v-for="icon in icons" :key="icon">
+      <div v-for="icon in icons" :key="icon" class="box">
         <Icon :icon="icon" />
         <span>{{ getIconCode(icon, true) }}</span>
       </div>
