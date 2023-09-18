@@ -1,8 +1,7 @@
 <div align="center">
-  <p align="center"><img alt="Vue-Power-Admin" align="center" src="./.github/logo.svg" width="100" /></p><br>
+  <p align="center"><img alt="Vue-Power-Admin-Pro" align="center" src="./.github/logo.svg" width="100" /></p><br>
   <p align="center">
-    <a href="https://github.com/nodejs/release#release-schedule"><img src="https://img.shields.io/badge/node-%5E14.18.0%20%7C%7C%20%3E%3D16.0.0-brightgreen?style=flat-square&logo=node.js" alt="Node"></a>
-    <a href="https://github.com/zhou-tao/vue-power-admin/releases"><img src="https://img.shields.io/badge/release-v2-important?style=flat-square&logo=github" alt="release"></a>
+    <a href="https://app.netlify.com/sites/vue-power-admin-pro/deploys"><img src="https://api.netlify.com/api/v1/badges/d937cb08-e0e6-4160-9aa6-42d2f94c26b6/deploy-status" alt="deploy status"></a>
   </p>
   <h1>Vue Power Admin Pro</h1>
 </div>
@@ -11,7 +10,7 @@
 
 ### :loudspeaker: 简介
 
-> [Vue Power Admin](https://zhou-tao.github.io/vue-power-admin) 是一个标准的中后台前端开发模板。基于当下最流行的 Vue3 + Typescript 技术栈构建，使用 Element-Plus 作为 UI 库。
+> [Vue Power Admin Pro](https://vue-power-admin-pro.netlify.app) 是一个标准的中后台全栈开发模板。基于当下最流行的 Nestjs + Vue3 + Typescript 技术栈构建，使用 Element-Plus 作为 UI 库。
 
 ### :rocket: 特性
 
@@ -31,9 +30,9 @@
 ```shell
 # clone
 # 如果未安装 degit 可以运行 `npm i -g degit`
-degit zhou-tao/vue-power-admin
+degit zhou-tao/vue-power-admin-pro
 # or
-git clone https://github.com/zhou-tao/vue-power-admin.git
+git clone https://github.com/zhou-tao/vue-power-admin-pro.git
 
 # cd vue-power-admin
 cd vue-power-admin
@@ -50,10 +49,8 @@ pnpm dev
 
 非常欢迎您为本仓库提交PR或者Issues! 
 
-特别感谢所有 [Vue Power Admin](https://zhou-tao.github.io/vue-power-admin) 的贡献者！
+特别感谢所有 [Vue Power Admin Pro](https://github.com/zhou-tao/vue-power-admin-pro/graphs/contributors) 的贡献者！
 
 ### :bookmark_tabs: License
 
-[MIT](https://github.com/zhou-tao/vue-power-admin/LICENSE)
-
-Copyright (c) 2022 zhou-tao
+[MIT](./LICENSE) License &copy; 2022-PRESENT toryz

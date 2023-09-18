@@ -1,8 +1,7 @@
 <div align="center">
-  <p align="center"><img alt="Vue-Power-Admin" align="center" src="./.github/logo.svg" width="100" /></p><br>
+  <p align="center"><img alt="Vue-Power-Admin-Pro" align="center" src="./.github/logo.svg" width="100" /></p><br>
   <p align="center">
-    <a href="https://github.com/nodejs/release#release-schedule"><img src="https://img.shields.io/badge/node-%5E14.18.0%20%7C%7C%20%3E%3D16.0.0-brightgreen?style=flat-square&logo=node.js" alt="Node"></a>
-    <a href="https://github.com/zhou-tao/vue-power-admin/releases"><img src="https://img.shields.io/badge/release-v2-important?style=flat-square&logo=github" alt="release"></a>
+    <a href="https://app.netlify.com/sites/vue-power-admin-pro/deploys"><img src="https://api.netlify.com/api/v1/badges/d937cb08-e0e6-4160-9aa6-42d2f94c26b6/deploy-status" alt="deploy status"></a>
   </p>
   <h1>Vue Power Admin Pro</h1>
 </div>
@@ -11,7 +10,7 @@
 
 ### :loudspeaker: Introduction
 
-> [Vue Power Admin](https://zhou-tao.github.io/vue-power-admin) is a fullstack project template for management systems. Built with Vite, Vue3 and [elements-plus](https://element-plus.org/zh-CN/).
+> [Vue Power Admin Pro](https://vue-power-admin-pro.netlify.app) is a fullstack project template for management systems. Built with Nestjs, Vite, Vue3 and [elements-plus](https://element-plus.org/zh-CN/).
 
 ### :rocket: Features
 
@@ -29,12 +28,12 @@
 ```shell
 # clone
 # if no degit can run `npm i -g degit`
-degit zhou-tao/vue-power-admin
+degit zhou-tao/vue-power-admin-pro
 # or
-git clone https://github.com/zhou-tao/vue-power-admin.git
+git clone https://github.com/zhou-tao/vue-power-admin-pro.git
 
 # cd vue-power-admin
-cd vue-power-admin
+cd vue-power-admin-pro
 
 # install dependencies
 pnpm i
@@ -48,7 +47,7 @@ pnpm dev
 
 All kinds of contributions are welcomed!
 
-[Contributors here](https://zhou-tao.github.io/vue-power-admin)
+[Contributors here](https://github.com/zhou-tao/vue-power-admin-pro/graphs/contributors)
 
 ### Thanks
 
@@ -68,6 +67,4 @@ This project cannot be done without these projects:
 
 ### LICENSE
 
-[MIT](https://github.com/zhou-tao/vue-power-admin/LICENSE)
-
-Copyright (c) 2022 zhou-tao
+[MIT](./LICENSE) License &copy; 2022-PRESENT toryz
