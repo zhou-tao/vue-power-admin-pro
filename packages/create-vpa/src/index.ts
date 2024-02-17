@@ -22,7 +22,7 @@ const cwd = process.cwd()
 
 const templates: Template[] = [
   { name: 'v1', display: 'vpa-frontend', repo: 'zhou-tao/vue-power-admin#main', color: lightGreen },
-  { name: 'v2', display: 'vpa-fullstack', repo: 'zhou-tao/vue-power-admin#2.x', color: lightCyan }
+  { name: 'v2', display: 'vpa-fullstack', repo: 'zhou-tao/vue-power-admin-pro#main', color: lightCyan }
 ]
 
 async function init() {
