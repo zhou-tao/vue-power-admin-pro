@@ -5,14 +5,14 @@
   "description": "vue-power-admin cli",
   "author": "toryz",
   "license": "MIT",
-  "homepage": "https://github.com/zhou-tao/vue-power-admin/tree/2.x/packages/create-vpa",
+  "homepage": "https://github.com/zhou-tao/vue-power-admin-pro/tree/main/packages/create-vpa",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhou-tao/vue-power-admin.git",
+    "url": "git+https://github.com/zhou-tao/vue-power-admin-pro.git",
     "directory": "packages/create-vpa"
   },
   "bugs": {
-    "url": "https://github.com/zhou-tao/vue-power-admin/issues"
+    "url": "https://github.com/zhou-tao/vue-power-admin-pro/issues"
   },
   "keywords": [
     "vue3",

@@ -27,8 +27,8 @@ ProjectType options are currently supported:
 
 - vpa-frontend: [vue-power-admin](https://github.com/zhou-tao/vue-power-admin)
 
-- vpa-fullstack: [vue-power-admin#2.x](https://github.com/zhou-tao/vue-power-admin/tree/2.x)
+- vpa-fullstack: [vue-power-admin-pro](https://github.com/zhou-tao/vue-power-admin-pro)
 
 ### LICENSE
 
-:heart: [MIT](https://github.com/zhou-tao/vue-power-admin/blob/2.x/packages/create-vpa/LICENSE)
+[MIT](https://github.com/zhou-tao/vue-power-admin-pro/blob/main/packages/create-vpa/LICENSE) License &copy; 2022-PRESENT toryz
