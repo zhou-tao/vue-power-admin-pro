@@ -28,11 +28,8 @@
 ### :alarm_clock: 使用
 
 ```shell
-# clone
-# 如果未安装 degit 可以运行 `npm i -g degit`
-degit zhou-tao/vue-power-admin-pro
-# or
-git clone https://github.com/zhou-tao/vue-power-admin-pro.git
+# 选择 `vpa-fullstack`
+pnpm create vpa vue-power-admin-pro
 
 # cd vue-power-admin
 cd vue-power-admin

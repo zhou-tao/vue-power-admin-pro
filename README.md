@@ -26,13 +26,10 @@
 ### :alarm_clock: Getting started
 
 ```shell
-# clone
-# if no degit can run `npm i -g degit`
-degit zhou-tao/vue-power-admin-pro
-# or
-git clone https://github.com/zhou-tao/vue-power-admin-pro.git
+# download and pick `vpa-fullstack` option
+pnpm create vpa vue-power-admin-pro
 
-# cd vue-power-admin
+# cd vue-power-admin-pro
 cd vue-power-admin-pro
 
 # install dependencies
